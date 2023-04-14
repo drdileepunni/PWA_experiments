@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Add Data to DB</h1>
+  <form id="add-data-form" action="{{ url_for('add_data_to_db') }}" method="post">
+    {{ form.csrf_token }}
+    <h2>Organisms</h2>
+    <div>
+      <label for="organism-name">Name:</label>
+      {{ form.organism_name(class="form-control", required=true) }}
+    </div>
+    <div>
+      <label for="organism-type">Type:</label>
+      {{ form.organism_type(class="form-control", required=true) }}
+    </div>
+    <button type="submit">Add Organism</button>
+  </form>
+  <form id="add-data-form" action="{{ url_for('add_data_to_db') }}" method="post">
+    {{ form.csrf_token }}
+    <h2>Antibiotics</h2>
+    <div>
+      <label for="antibiotic-name">Name:</label>
+      {{ form.antibiotic_name(class="form-control", required=true) }}
+    </div>
+    <div>
+      <label for="antibiotic-type">Type:</label>
+      {{ form.antibiotic_type(class="form-control", required=true) }}
+    </div>
+    <button type="submit">Add Antibiotic</button>
+  </form>
+{% endblock %}
